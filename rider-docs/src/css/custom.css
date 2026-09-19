@@ -7,27 +7,70 @@
 /* 솔라쉐어 라이더 디자인 시스템 — 토큰 (컴포넌트를 옮길 때마다 tokens.css에 필요한 값 추가) */
 @import './tokens.css';
 
-/* You can override the default Infima variables here. */
+/* 1. 브랜드 폰트 — Pretendard (CDN, 별도 파일 업로드 없이 바로 적용) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+html {
+  font-family: var(--font-family-base);
+}
+
+/* 2. 컬러 테마 — Infima 기본 초록색 대신 브랜드 Main 컬러 계열 사용 */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+  --ifm-color-primary: var(--color-main-900);
+  --ifm-color-primary-dark: #101047;
+  --ifm-color-primary-darker: #0f0f42;
+  --ifm-color-primary-darkest: #0c0c37;
+  --ifm-color-primary-light: var(--color-main-800);
+  --ifm-color-primary-lighter: #17177a;
+  --ifm-color-primary-lightest: #232391;
+  --ifm-code-font-size: 90%;
+  --ifm-font-family-base: var(--font-family-base);
+  --ifm-heading-font-weight: 700;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #6d76c9;
+  --ifm-color-primary-dark: #4d57bc;
+  --ifm-color-primary-darker: #3d48b6;
+  --ifm-color-primary-darkest: #333d97;
+  --ifm-color-primary-light: #8d94d6;
+  --ifm-color-primary-lighter: #9da3dc;
+  --ifm-color-primary-lightest: #cdd0ed;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* 4. 본문 타이포/여백 — Montage처럼 넉넉한 줄간격·섹션 여백 */
+.markdown h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.markdown h2 {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  font-size: 1.5rem;
+}
+.markdown p {
+  line-height: 1.7;
+}
+.markdown {
+  --ifm-leading: 1.7;
+}
+
+/* 5. Variant 전시 카드 — 컴포넌트가 맨바닥에 놓이지 않도록 감싸는 스테이지 */
+.variant-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 32px 24px;
+  margin: 16px 0 24px;
+  background: var(--background-subtle, #f5f6fa);
+  border-radius: 12px;
+  border: 1px solid var(--ifm-toc-border-color);
+}
+
+[data-theme='dark'] .variant-stage {
+  background: var(--ifm-background-surface-color);
 }
