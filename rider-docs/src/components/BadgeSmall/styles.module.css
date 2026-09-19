@@ -1,0 +1,43 @@
+/*
+ * Badge-Small — 06 · Indicators
+ * 토큰 출처: rider/10-tokens-최신-2026-09-18.css (semantic 레이어)
+ * 이 컴포넌트는 site 전역에 이미 로드된 tokens.css 의 CSS 변수와
+ * .text-body-4-semibold 타이포 클래스를 그대로 사용합니다.
+ */
+
+.badge {
+  height: 26px;
+  box-sizing: border-box;
+  padding: 0 var(--space-08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-06);
+}
+
+.label {
+  /* text-body-4-semibold 가 font-size/weight/line-height 를 담당,
+     색상만 variant별로 지정 */
+}
+
+.blue {
+  background: var(--status-info-bg-strong);
+}
+.blue .label {
+  color: var(--status-info-label);
+}
+
+.gray {
+  background: var(--status-neutral-bg-strong);
+}
+.gray .label {
+  /* 의도된 예외: Badge-Medium의 gray(--status-neutral-label)보다 진합니다 */
+  color: var(--label-normal);
+}
+
+.red {
+  background: var(--status-negative-bg-strong);
+}
+.red .label {
+  color: var(--status-negative-label);
+}

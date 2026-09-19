@@ -1,0 +1,66 @@
+/* 솔라쉐어 라이더 디자인 시스템 — 전역 토큰
+ * 출처: 프로젝트 문서 rider/10-tokens-최신-2026-09-18.css
+ * Docusaurus 는 src/css/custom.css 에서 이 파일을 import 해서 전역에 적용합니다.
+ * (모든 컴포넌트가 공유하는 파일이라, Badge-Small 이후 다른 컴포넌트를 옮길 때도
+ *  이 파일은 그대로 두고 계속 재사용하면 됩니다.)
+ */
+
+:root {
+  /* ── Color / Main ───────────────────────────────────── */
+  --color-main-900: #12124F;
+  --color-main-800: #12126F;
+
+  /* ── Color / Sub ────────────────────────────────────── */
+  --color-sub-01-500: #4D76CA;
+  --color-sub-01-200: #E9F2FF;
+  --color-sub-01-100: #F4F9FF;
+  --color-sub-03-500: #6D7281;
+
+  /* ── Color / Gray ───────────────────────────────────── */
+  --color-gray-000: #FFFFFF;
+  --color-gray-050: #F8F9FB;
+  --color-gray-100: #F2F2F3;
+  --color-gray-300: #C9CACE;
+  --color-gray-600: #525256;
+
+  /* ── Color / System ─────────────────────────────────── */
+  --color-system-red-200: #FFE8EC;
+  --color-system-red-500: #E63E3B;
+
+  /* ── Space ──────────────────────────────────────────── */
+  --space-008: 8px;
+  --space-08: var(--space-008);
+
+  /* ── Radius ─────────────────────────────────────────── */
+  --radius-006: 6px;
+  --radius-06: var(--radius-006);
+
+  /* ── Font ───────────────────────────────────────────── */
+  --font-family-base: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-letter-spacing: -0.02em;
+
+  /* ── Semantic — Label ───────────────────────────────── */
+  --label-normal: var(--color-gray-600);
+
+  /* ── Semantic — Status ──────────────────────────────── */
+  --status-info-bg-strong: var(--color-sub-01-200);
+  --status-info-label: var(--color-sub-01-500);
+  --status-neutral-bg-strong: var(--color-gray-100);
+  --status-negative-bg-strong: var(--color-system-red-200);
+  --status-negative-label: var(--color-system-red-500);
+}
+
+/* Badge-Small 이 사용하는 타이포 클래스 (text-body-4-semibold)
+ * 다른 컴포넌트를 옮길 때 필요한 만큼 계속 추가하면 됩니다. */
+[class^="text-"],
+[class*=" text-"] {
+  font-family: var(--font-family-base);
+  letter-spacing: var(--font-letter-spacing);
+  margin: 0;
+}
+
+.text-body-4-semibold {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}

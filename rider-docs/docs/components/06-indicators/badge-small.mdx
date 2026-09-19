@@ -1,0 +1,41 @@
+---
+title: Badge-Small
+description: 06 · Indicators · Figma 325:21447 · 3변이
+---
+
+import BadgeSmall from '@site/src/components/BadgeSmall';
+
+# Badge-Small
+
+06 · Indicators · Figma `325:21447` · 3변이 — 명세: `components/06-indicators/badge-small.md`
+
+:::tip 상태: 완료
+:::
+
+<div style={{display: 'flex', gap: '12px', alignItems: 'center'}}>
+  <BadgeSmall variant="blue" />
+  <BadgeSmall variant="gray" />
+  <BadgeSmall variant="red" />
+</div>
+
+## Variants
+
+| Variant | 배경 토큰 | 텍스트 토큰 |
+|---|---|---|
+| `blue` | `--status-info-bg-strong` | `--status-info-label` |
+| `gray` | `--status-neutral-bg-strong` | `--label-normal` |
+| `red` | `--status-negative-bg-strong` | `--status-negative-label` |
+
+:::warning
+`gray` variant의 라벨만 `--label-normal`(#525256)로 Status 계열 밖입니다 — Badge-Medium의 `gray`
+(`--status-neutral-label` #6D7281)보다 진합니다. Figma "Spec" 표에 명시된 **의도된 차이**이며
+대비를 6.95:1까지 올립니다.
+:::
+
+## 사용법
+
+```mdx
+import BadgeSmall from '@site/src/components/BadgeSmall';
+
+<BadgeSmall variant="blue">텍스트</BadgeSmall>
+```
